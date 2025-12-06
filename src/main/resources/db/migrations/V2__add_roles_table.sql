@@ -1,0 +1,4 @@
+CREATE TABLE roles(
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name varchar(100)
+)
