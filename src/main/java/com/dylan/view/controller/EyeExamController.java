@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dylan.view.dto.appointment.response.AppointmentResponse;
-import com.dylan.view.service.AppointmentService;
+import com.dylan.view.dto.eye_exam.response.EyeExamResponse;
+import com.dylan.view.service.EyeExamService;
 
 @RestController
-@RequestMapping("/appointment")
-public class AppointmentController {
+@RequestMapping("/eye_exam")
+public class EyeExamController {
 
     @Autowired
-    private AppointmentService appointmentServ;
+    private EyeExamService eyeExamServ;
 
     @GetMapping
-    public ResponseEntity<Page<AppointmentResponse>> getAllAppointment(Pageable pageable) {
-        return ResponseEntity.ok(appointmentServ.getAllApointment(pageable));
+    public ResponseEntity<Page<EyeExamResponse>> createEyeExam(Pageable pageable) {
+        return ResponseEntity.ok(eyeExamServ.createEyeExam(pageable));
     }
 
 }

@@ -18,28 +18,25 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="sales")
+@Table(name = "sales")
 public class Sales {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne  
-    @JoinColumn(name="patient_id", referencedColumnName="id")
+    @ManyToOne
+    @JoinColumn(name = "patient_id", referencedColumnName = "id")
     private Patients patients;
 
     @ManyToOne
-    @JoinColumn(name="staff_id", referencedColumnName="id")
+    @JoinColumn(name = "staff_id", referencedColumnName = "id")
     private Staff staff;
 
-    @Column(name="sale_date")
+    @Column(name = "sale_date")
     private LocalDateTime saleDate;
 
-    @Column(name="total_amount")
+    @Column(name = "total_amount")
     private double totalAmount;
 
-    
-    
-    
 }

@@ -1,7 +1,5 @@
 package com.dylan.view.service;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,15 +16,15 @@ public class PatientsService {
     @Autowired
     private PatientsRepository patientsRepo;
 
-    @Transactional(readOnly=true)
-    public Page<PatientsResponse>getAllPatients(Pageable pageable){
+    @Transactional(readOnly = true)
+    public Page<PatientsResponse> getAllPatients(Pageable pageable) {
         return patientsRepo.findAll(pageable).map(PatientsMapper::toDto);
 
     }
 
-    @Transactional(readOnly=true)
-    public Page<PatientsResponse>getPatientsByLastname(String patientsLastname, Pageable pageable){
+    @Transactional(readOnly = true)
+    public Page<PatientsResponse> getPatientsByLastname(String patientsLastname, Pageable pageable) {
         return patientsRepo.findByLastnameContaining(patientsLastname, pageable).map(PatientsMapper::toDto);
     }
-    
+
 }

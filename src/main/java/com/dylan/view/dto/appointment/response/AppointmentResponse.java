@@ -19,5 +19,5 @@ public class AppointmentResponse {
     private StaffResponse staff;
     private LocalDateTime appointmentDate;
     private String notes;
-    
+
 }

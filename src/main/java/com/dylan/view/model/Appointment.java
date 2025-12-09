@@ -1,6 +1,7 @@
 package com.dylan.view.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -19,28 +21,31 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="appointments")
+@Table(name = "appointments")
 public class Appointment {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="status_id")
+    @Column(name = "status_id")
     private String statusId;
 
     @OneToOne
-    @JoinColumn(name="patient_id", referencedColumnName="id")
+    @JoinColumn(name = "patient_id", referencedColumnName = "id")
     private Patients patients;
 
     @ManyToOne
-    @JoinColumn(name="staff_id", referencedColumnName="id")
+    @JoinColumn(name = "staff_id", referencedColumnName = "id")
     private Staff staff;
 
-    @Column(name="appointment_date")
+    @Column(name = "appointment_date")
     private LocalDateTime appointmentDate;
 
-    @Column(name="notes")
+    @Column(name = "notes")
     private String notes;
-    
+
+    @OneToMany(mappedBy = "appointment")
+    private List<EyeExam>  eyeExam;
+
 }

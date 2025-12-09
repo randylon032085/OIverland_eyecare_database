@@ -20,44 +20,43 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="patients")
+@Table(name = "patients")
 public class Patients {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="firstname")
+    @Column(name = "firstname")
     private String firstname;
 
-    @Column(name="lastname")
+    @Column(name = "lastname")
     private String lastname;
 
-    @Column(name="date_of_birth")
+    @Column(name = "date_of_birth")
     private LocalDateTime dateOfBirth;
-    
-    @Column(name="gender")
+
+    @Column(name = "gender")
     private String gender;
 
-    @Column(name="phone")
+    @Column(name = "phone")
     private long phone;
 
-    @Column(name="email")
+    @Column(name = "email")
     @Email
     private String email;
 
-    @Column(name="address")
+    @Column(name = "address")
     private String address;
 
-    @Column(name="created_at")
+    @Column(name = "created_at")
     @org.hibernate.annotations.CreationTimestamp
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy="patients")
+    @OneToMany(mappedBy = "patients")
     private List<Sales> sales;
 
-    @OneToOne(mappedBy="patients")
+    @OneToOne(mappedBy = "patients")
     private Appointment appointment;
 
-    
 }

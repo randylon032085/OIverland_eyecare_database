@@ -16,8 +16,8 @@ public class AppointmentService {
     @Autowired
     private AppointmentRepository appointmentRepo;
 
-    @Transactional(readOnly=true)
-    public Page<AppointmentResponse>getAllApointment(Pageable pageable){
+    @Transactional(readOnly = true)
+    public Page<AppointmentResponse> getAllApointment(Pageable pageable) {
         return appointmentRepo.findAll(pageable).map(AppointmentMapper::toDto);
-    }    
+    }
 }

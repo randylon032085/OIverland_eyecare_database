@@ -16,9 +16,9 @@ public class RolesService {
     @Autowired
     private RolesRepository rolesRepository;
 
-    @Transactional(readOnly=true)
-    public Page<RolesResponse>getAllRoles(Pageable pageable){
+    @Transactional(readOnly = true)
+    public Page<RolesResponse> getAllRoles(Pageable pageable) {
         return rolesRepository.findAll(pageable).map(RolesMapper::toDto);
     }
-    
+
 }

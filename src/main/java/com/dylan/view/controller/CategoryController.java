@@ -8,19 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dylan.view.dto.appointment.response.AppointmentResponse;
-import com.dylan.view.service.AppointmentService;
+import com.dylan.view.dto.category.response.CategoryResponse;
+import com.dylan.view.service.CategoryService;
 
 @RestController
-@RequestMapping("/appointment")
-public class AppointmentController {
-
+@RequestMapping("/category")
+public class CategoryController {
+    
     @Autowired
-    private AppointmentService appointmentServ;
+    private CategoryService categoryServ;
 
     @GetMapping
-    public ResponseEntity<Page<AppointmentResponse>> getAllAppointment(Pageable pageable) {
-        return ResponseEntity.ok(appointmentServ.getAllApointment(pageable));
+    public ResponseEntity<Page<CategoryResponse>>getAllCategory(Pageable pageable){
+        return ResponseEntity.ok(categoryServ.getAllCategory(pageable));
     }
-
 }

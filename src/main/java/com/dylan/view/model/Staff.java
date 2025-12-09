@@ -21,36 +21,36 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="staff")
+@Table(name = "staff")
 public class Staff {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="firstname")
+    @Column(name = "firstname")
     private String firstname;
 
-    @Column(name="lastname")
+    @Column(name = "lastname")
     private String lastname;
 
-    @Column(name="phone")
+    @Column(name = "phone")
     private long phone;
 
-    @Column(name="email")
+    @Column(name = "email")
     @Email
     private String email;
 
-    @Column(name="hired_date")
+    @Column(name = "hired_date")
     private LocalDateTime hiredDate;
 
     @ManyToOne
-    @JoinColumn(name="role_id", referencedColumnName="id")
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Roles roles;
-    
-    @OneToMany(mappedBy="staff")
-    private List<Sales>  sales;
 
-    @OneToMany(mappedBy="staff")
+    @OneToMany(mappedBy = "staff")
+    private List<Sales> sales;
+
+    @OneToMany(mappedBy = "staff")
     private List<Appointment> appointment;
 }

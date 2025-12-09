@@ -6,18 +6,19 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dylan.view.dto.staff.response.StaffResponse;
-import com.dylan.view.repositories.StaffRepository;
-import com.dylan.view.utilmapper.StaffMapper;
+import com.dylan.view.dto.eye_exam.response.EyeExamResponse;
+import com.dylan.view.repositories.EyeExamRepository;
+import com.dylan.view.utilmapper.EyeExamMapper;
 
 @Service
-public class StaffService {
+public class EyeExamService {
 
     @Autowired
-    private StaffRepository staffRepo;
+    private EyeExamRepository examRepo;
 
     @Transactional(readOnly = true)
-    public Page<StaffResponse> getAllStaff(Pageable pageable) {
-        return staffRepo.findAll(pageable).map(StaffMapper::toDto);
+    public Page<EyeExamResponse> createEyeExam(Pageable pageable) {
+        return examRepo.findAll(pageable).map(EyeExamMapper::toDto);
+
     }
 }

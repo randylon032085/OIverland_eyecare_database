@@ -16,9 +16,9 @@ public class SalesService {
     @Autowired
     private SalesRepository salesRepo;
 
-    @Transactional(readOnly=true)
-    public Page<SalesResponse>getAllSales(Pageable pageable){
+    @Transactional(readOnly = true)
+    public Page<SalesResponse> getAllSales(Pageable pageable) {
         return salesRepo.findAll(pageable).map(SalesMapper::toDto);
     }
-    
+
 }
