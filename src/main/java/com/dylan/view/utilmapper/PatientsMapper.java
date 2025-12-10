@@ -1,6 +1,7 @@
 package com.dylan.view.utilmapper;
 
 import com.dylan.view.dto.patients.reponse.PatientsResponse;
+import com.dylan.view.dto.patients.request.PatientsCreateRequest;
 import com.dylan.view.model.Patients;
 
 public class PatientsMapper {
@@ -19,6 +20,20 @@ public class PatientsMapper {
             patients.getCreatedAt()
 
         );
+    }
+
+    public static Patients toEntity(PatientsCreateRequest patientsCreateRequest){
+        if(patientsCreateRequest == null)return null;
+        Patients patients = new Patients();
+        patients.setFirstname(patientsCreateRequest.getFirstname());
+        patients.setLastname(patientsCreateRequest.getLastname());
+        patients.setDateOfBirth(patientsCreateRequest.getDateOfBirth());
+        patients.setGender(patientsCreateRequest.getGender());
+        patients.setPhone(patientsCreateRequest.getPhone());
+        patients.setEmail(patientsCreateRequest.getEmail());
+        patients.setAddress(patientsCreateRequest.getAddress());
+
+        return patients;
     }
     
 }

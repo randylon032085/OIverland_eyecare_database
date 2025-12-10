@@ -8,20 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dylan.view.dto.sales.response.SalesResponse;
-import com.dylan.view.service.SalesService;
+import com.dylan.view.dto.sales_item.response.SalesItemResponse;
+import com.dylan.view.service.SalesItemService;
 
 @RestController
-@RequestMapping("/sales")
-public class SalesController {
+@RequestMapping("/sale_item")
+public class SalesItemController {
 
     @Autowired
-    private SalesService salesServ;
-
+    private SalesItemService salesItemServ;
 
     @GetMapping
-    public ResponseEntity<Page<SalesResponse>>getAllSales(Pageable pageable){
-        return ResponseEntity.ok(salesServ.getAllSales(pageable));
+    public ResponseEntity<Page<SalesItemResponse>>getAllSalesItem(Pageable pageable){
+        return ResponseEntity.ok(salesItemServ.getAllSalesItem(pageable));
     }
     
 }

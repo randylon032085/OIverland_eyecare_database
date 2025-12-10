@@ -1,6 +1,6 @@
 package com.dylan.view.utilmapper;
 
-import com.dylan.view.dto.sales_item.response.SalesResponse;
+import com.dylan.view.dto.sales.response.SalesResponse;
 import com.dylan.view.model.Sales;
 
 public class SalesMapper {

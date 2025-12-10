@@ -1,4 +1,4 @@
-package com.dylan.view.dto.sales_item.response;
+package com.dylan.view.dto.sales.response;
 
 import java.time.LocalDateTime;
 

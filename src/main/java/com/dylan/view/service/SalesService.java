@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dylan.view.dto.sales_item.response.SalesResponse;
+import com.dylan.view.dto.sales.response.SalesResponse;
 import com.dylan.view.repositories.SalesRepository;
 import com.dylan.view.utilmapper.SalesMapper;
 
