@@ -1,4 +1,4 @@
-package com.dylan.view.dto.patients.request;
+package com.dylan.view.dto.staff.request;
 
 import java.time.LocalDate;
 
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PatientsCreateRequest {
+public class StaffCreateRequest {
     
     @NotBlank
     private String firstname;
@@ -20,19 +20,14 @@ public class PatientsCreateRequest {
     private String lastname;
 
     @NotNull
-    private LocalDate dateOfBirth;
-
-    @NotBlank
-    private String gender;
-
-    @NotNull
     private long phone;
 
     @NotBlank
     private String email;
 
-    @NotBlank
-    private String address;
-
-   
+    @NotNull
+    private LocalDate hiredDate;
+    
+    @NotNull
+    private int role_id;
 }

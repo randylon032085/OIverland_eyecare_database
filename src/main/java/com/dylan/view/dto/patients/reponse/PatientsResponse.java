@@ -1,5 +1,6 @@
 package com.dylan.view.dto.patients.reponse;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class PatientsResponse {
     private String lastname;
 
 
-    private LocalDateTime dateOfBirth;
+    private LocalDate dateOfBirth;
 
  
     private String gender;

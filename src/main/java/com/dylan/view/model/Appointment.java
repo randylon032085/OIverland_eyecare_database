@@ -1,5 +1,6 @@
 package com.dylan.view.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -40,12 +41,12 @@ public class Appointment {
     private Staff staff;
 
     @Column(name = "appointment_date")
-    private LocalDateTime appointmentDate;
+    private LocalDate appointmentDate;
 
     @Column(name = "notes")
     private String notes;
 
     @OneToMany(mappedBy = "appointment")
-    private List<EyeExam>  eyeExam;
+    private List<EyeExam> eyeExam;
 
 }

@@ -1,6 +1,6 @@
 package com.dylan.view.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -42,7 +42,7 @@ public class Staff {
     private String email;
 
     @Column(name = "hired_date")
-    private LocalDateTime hiredDate;
+    private LocalDate hiredDate;
 
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id")

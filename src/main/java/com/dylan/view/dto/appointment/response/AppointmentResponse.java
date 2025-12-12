@@ -1,6 +1,6 @@
 package com.dylan.view.dto.appointment.response;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import com.dylan.view.dto.patients.reponse.PatientsResponse;
 import com.dylan.view.dto.staff.response.StaffResponse;
@@ -17,7 +17,7 @@ public class AppointmentResponse {
     private String statusId;
     private PatientsResponse patients;
     private StaffResponse staff;
-    private LocalDateTime appointmentDate;
+    private LocalDate appointmentDate;
     private String notes;
 
 }

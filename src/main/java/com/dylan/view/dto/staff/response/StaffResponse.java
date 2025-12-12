@@ -1,6 +1,6 @@
 package com.dylan.view.dto.staff.response;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import com.dylan.view.dto.roles.response.RolesResponse;
 
@@ -18,7 +18,7 @@ public class StaffResponse {
     private String lastname;
     private long phone;
     private String email;
-    private LocalDateTime hiredDate;
+    private LocalDate hiredDate;
 
     private RolesResponse roles;
     
