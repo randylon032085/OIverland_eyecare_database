@@ -1,5 +1,6 @@
 package com.dylan.view.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -51,11 +52,11 @@ public class EyeExam {
     @Column(name = "pd")
     private double pd;
 
-    @Column(name="exam_notes")
+    @Column(name = "exam_notes")
     private String examNotes;
 
     @Column(name = "exam_date")
-    private LocalDateTime examDate;
+    private LocalDate examDate;
 
     @OneToOne(mappedBy = "eyeExam")
     private Prescription prescription;

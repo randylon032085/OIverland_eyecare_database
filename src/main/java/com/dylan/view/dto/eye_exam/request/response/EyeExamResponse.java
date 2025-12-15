@@ -1,6 +1,6 @@
-package com.dylan.view.dto.eye_exam.response;
+package com.dylan.view.dto.eye_exam.request.response;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import com.dylan.view.dto.appointment.response.AppointmentResponse;
 
@@ -22,5 +22,5 @@ public class EyeExamResponse {
     private int leftEyeAxis;
     private double pd;
     private String examNotes;
-    private LocalDateTime examDate;
+    private LocalDate examDate;
 }
