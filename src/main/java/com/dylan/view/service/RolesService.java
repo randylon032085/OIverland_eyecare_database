@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.dylan.view.dto.roles.request.RoleCreateRequest;
+import com.dylan.view.dto.roles.request.RolesUpdateRequest;
 import com.dylan.view.dto.roles.response.RolesResponse;
 import com.dylan.view.model.Roles;
 import com.dylan.view.repositories.RolesRepository;
@@ -32,6 +33,21 @@ public class RolesService {
         Roles saveRole = rolesRepository.save(currentRole);
 
         return RolesMapper.toDto(saveRole);
+    }
+
+    @Transactional
+    public RolesResponse updateRole(int id, RolesUpdateRequest rolesUpdateRequest){
+
+       Roles roles = rolesRepository.findById(id)
+       .orElseThrow(()-> new IllegalArgumentException("Role id not found " + id));
+
+       RolesMapper.updateApply(roles, rolesUpdateRequest);
+
+       Roles saveUpdateRole = rolesRepository.save(roles);
+
+       return RolesMapper.toDto(saveUpdateRole);
+
+
     }
 
 }

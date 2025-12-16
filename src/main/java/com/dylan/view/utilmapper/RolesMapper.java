@@ -1,6 +1,7 @@
 package com.dylan.view.utilmapper;
 
 import com.dylan.view.dto.roles.request.RoleCreateRequest;
+import com.dylan.view.dto.roles.request.RolesUpdateRequest;
 import com.dylan.view.dto.roles.response.RolesResponse;
 import com.dylan.view.model.Roles;
 
@@ -24,6 +25,11 @@ public class RolesMapper {
         roles.setName(roleCreateRequest.getName());
 
         return roles;
+   }
+
+   public static void updateApply (Roles roles, RolesUpdateRequest rolesUpdateRequest){
+
+        roles.setName(rolesUpdateRequest.getName());
    }
     
 }

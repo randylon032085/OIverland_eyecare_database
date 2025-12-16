@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dylan.view.dto.staff.request.StaffCreateRequest;
+import com.dylan.view.dto.staff.request.StaffUpdateRequest;
 import com.dylan.view.dto.staff.response.StaffResponse;
 import com.dylan.view.model.Roles;
 import com.dylan.view.model.Staff;
@@ -39,6 +40,20 @@ public class StaffService {
         Staff saveStaff = staffRepo.save(staff);
 
         return StaffMapper.toDto(saveStaff);
+
+    }
+
+    @Transactional
+    public StaffResponse updateStaff(int id, StaffUpdateRequest staffUpdateRequest){
+
+        Staff staff = staffRepo.findById(id)
+        .orElseThrow(()-> new IllegalArgumentException("Staff id not found : " + id));
+
+        StaffMapper.updateApply(staff, staffUpdateRequest);
+
+        Staff savedStaff = staffRepo.save(staff);
+
+        return StaffMapper.toDto(savedStaff);
 
     }
 }

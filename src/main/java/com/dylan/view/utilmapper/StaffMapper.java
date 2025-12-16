@@ -1,6 +1,7 @@
 package com.dylan.view.utilmapper;
 
 import com.dylan.view.dto.staff.request.StaffCreateRequest;
+import com.dylan.view.dto.staff.request.StaffUpdateRequest;
 import com.dylan.view.dto.staff.response.StaffResponse;
 import com.dylan.view.model.Staff;
 
@@ -32,5 +33,14 @@ public class StaffMapper {
         staff.setHiredDate(staffCreateRequest.getHiredDate());
 
         return staff;
+    }
+
+    public static void updateApply(Staff staff, StaffUpdateRequest staffUpdateRequest){
+
+        staff.setFirstname(staffUpdateRequest.getFirstname());
+        staff.setLastname(staffUpdateRequest.getLastname());
+        staff.setPhone(staffUpdateRequest.getPhone());
+        staff.setEmail(staffUpdateRequest.getEmail());
+        staff.setHiredDate(staffUpdateRequest.getHiredDate());
     }
 }

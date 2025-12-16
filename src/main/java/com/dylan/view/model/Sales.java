@@ -36,6 +36,7 @@ public class Sales {
     private Staff staff;
 
     @Column(name = "sale_date")
+    @org.hibernate.annotations.CreationTimestamp
     private LocalDateTime saleDate;
 
     @Column(name = "total_amount")

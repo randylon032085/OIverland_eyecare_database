@@ -1,5 +1,6 @@
 package com.dylan.view.utilmapper;
 
+import com.dylan.view.dto.sales.request.SalesCreateRequest;
 import com.dylan.view.dto.sales.response.SalesResponse;
 import com.dylan.view.model.Sales;
 
@@ -14,6 +15,16 @@ public class SalesMapper {
             sales.getSaleDate(),
             sales.getTotalAmount()
         );
+    }
+
+    public static Sales toEntity(SalesCreateRequest salesCreateRequest){
+        if(salesCreateRequest == null) return null;
+
+        Sales sales = new Sales();
+
+        sales.setTotalAmount(salesCreateRequest.getTotalAmount());
+
+        return sales;
     }
     
 }
