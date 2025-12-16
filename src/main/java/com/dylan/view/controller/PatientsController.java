@@ -1,5 +1,7 @@
 package com.dylan.view.controller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,6 +37,21 @@ public class PatientsController {
     @GetMapping("by-patients")
     public ResponseEntity<Page<PatientsResponse>>getPatientsByLastname(String patientsLastname, Pageable pageable){
         return ResponseEntity.ok(patientsService.getPatientsByLastname(patientsLastname, pageable));
+    }
+
+    @GetMapping("by-firstname")
+    public ResponseEntity<Page<PatientsResponse>>getPatientsByFirstname(String Firstname, Pageable pageable){
+        return ResponseEntity.ok(patientsService.getPatientByFirstname(Firstname, pageable));
+    }
+
+    @GetMapping("by-dateOfBirth")
+    public ResponseEntity<Page<PatientsResponse>>getPatientsByDateOfBirth(LocalDate DateOfBirth, Pageable pageable){
+        return ResponseEntity.ok(patientsService.getPatientsByDateOfBirth(DateOfBirth, pageable));
+    }
+
+    @GetMapping("by-gender")
+    public ResponseEntity<Page<PatientsResponse>>getPatientByGender(String Gender, Pageable pageable){
+        return ResponseEntity.ok(patientsService.getPatientsByGender(Gender, pageable));
     }
 
     @PostMapping

@@ -29,6 +29,21 @@ public class InventoryController {
         return ResponseEntity.ok(inventoryServ.getAllInventory(pageable));
             
     }
+    @GetMapping("/by-name")
+    public ResponseEntity<Page<InventoryResponse>>getInventoryByName(String Name, Pageable pageable){
+        return ResponseEntity.ok(inventoryServ.getInventoryByName(Name, pageable));
+    }
+
+    @GetMapping("/by-itemname")
+    public ResponseEntity<Page<InventoryResponse>>getInventoryByItemName(String itemName, Pageable pageable){
+        return ResponseEntity.ok(inventoryServ.getInventoryByItemName(itemName, pageable));
+    }
+
+    @GetMapping("/by-brand")
+    public ResponseEntity<Page<InventoryResponse>>getInventoryByBrand(String brand, Pageable pageable){
+        return ResponseEntity.ok(inventoryServ.getInventoryByBrand(brand, pageable));
+    }
+
 
     @PostMapping
     public ResponseEntity<InventoryResponse> createInventory (@Valid @RequestBody InventoryCreateRequest inventoryCreateRequest){

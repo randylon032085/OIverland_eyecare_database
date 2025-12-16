@@ -1,5 +1,7 @@
 package com.dylan.view.service;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -31,6 +33,21 @@ public class PatientsService {
     @Transactional(readOnly = true)
     public Page<PatientsResponse> getPatientsByLastname(String patientsLastname, Pageable pageable) {
         return patientsRepo.findByLastnameContaining(patientsLastname, pageable).map(PatientsMapper::toDto);
+    }
+
+    @Transactional(readOnly=true)
+    public Page<PatientsResponse> getPatientByFirstname(String Firstname, Pageable pageable){
+        return patientsRepo.findByFirstnameContaining(Firstname, pageable).map(PatientsMapper::toDto);
+    }
+
+    @Transactional(readOnly=true)
+    public Page<PatientsResponse> getPatientsByDateOfBirth(LocalDate DateOfBirth, Pageable pageable){
+        return patientsRepo.findByDateOfBirth(DateOfBirth, pageable).map(PatientsMapper::toDto);
+    }
+
+    @Transactional(readOnly=true)
+    public Page<PatientsResponse> getPatientsByGender(String Gender, Pageable pageable){
+        return patientsRepo.findByGenderContaining(Gender, pageable).map(PatientsMapper::toDto);
     }
 
     @Transactional

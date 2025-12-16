@@ -28,6 +28,21 @@ public class InventoryService {
         return inventoryRepo.findAll(pageable).map(InventoryMapper::toDto);
     }
 
+    @Transactional(readOnly=true)
+    public Page<InventoryResponse> getInventoryByName(String Name, Pageable pageable){
+        return inventoryRepo.findByCategoryNameContaining(Name, pageable).map(InventoryMapper::toDto);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<InventoryResponse> getInventoryByItemName(String itemName,  Pageable pageable){
+        return inventoryRepo.findByItemNameContaining(itemName, pageable).map(InventoryMapper::toDto);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<InventoryResponse> getInventoryByBrand(String brand, Pageable pageable){
+        return inventoryRepo.findByBrandContaining(brand, pageable).map(InventoryMapper::toDto);
+    }
+
     @Transactional
     public InventoryResponse createInventory(InventoryCreateRequest inventoryCreateRequest){
 
