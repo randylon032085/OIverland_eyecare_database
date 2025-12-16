@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.dylan.view.dto.patients.reponse.PatientsResponse;
+import com.dylan.view.dto.patients.request.PatientUpdateRequest;
 import com.dylan.view.dto.patients.request.PatientsCreateRequest;
 import com.dylan.view.model.Patients;
 import com.dylan.view.repositories.PatientsRepository;
@@ -37,6 +38,19 @@ public class PatientsService {
         Patients currentPatients = PatientsMapper.toEntity(patientsCreateRequest);
         Patients saveNewPatients = patientsRepo.save(currentPatients);
         return PatientsMapper.toDto(saveNewPatients);
+    }
+
+    @Transactional
+    public PatientsResponse updatePatient(int id, PatientUpdateRequest patientUpdateRequest){
+
+        Patients patients = patientsRepo.findById(id)
+        .orElseThrow(()-> new IllegalArgumentException("Patient id " + id  +"not found "));
+
+        PatientsMapper.updateApply(patients, patientUpdateRequest);
+
+
+        Patients savePatients = patientsRepo.save(patients);
+        return PatientsMapper.toDto(savePatients);
     }
 
 }

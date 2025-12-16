@@ -1,4 +1,4 @@
-package com.dylan.view.dto.eye_exam.request.response;
+package com.dylan.view.dto.eye_exam.response;
 
 import java.time.LocalDate;
 

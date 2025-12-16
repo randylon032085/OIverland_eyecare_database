@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dylan.view.dto.eye_exam.request.EyeExamCreateRequest;
-import com.dylan.view.dto.eye_exam.request.response.EyeExamResponse;
+import com.dylan.view.dto.eye_exam.response.EyeExamResponse;
 import com.dylan.view.service.EyeExamService;
 
 import jakarta.validation.Valid;

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dylan.view.dto.eye_exam.request.EyeExamCreateRequest;
-import com.dylan.view.dto.eye_exam.request.response.EyeExamResponse;
+import com.dylan.view.dto.eye_exam.response.EyeExamResponse;
 import com.dylan.view.model.Appointment;
 import com.dylan.view.model.EyeExam;
 import com.dylan.view.repositories.AppointmentRepository;

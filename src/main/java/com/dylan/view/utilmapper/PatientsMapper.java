@@ -1,6 +1,7 @@
 package com.dylan.view.utilmapper;
 
 import com.dylan.view.dto.patients.reponse.PatientsResponse;
+import com.dylan.view.dto.patients.request.PatientUpdateRequest;
 import com.dylan.view.dto.patients.request.PatientsCreateRequest;
 import com.dylan.view.model.Patients;
 
@@ -34,6 +35,19 @@ public class PatientsMapper {
         patients.setAddress(patientsCreateRequest.getAddress());
 
         return patients;
+    }
+
+    public static void updateApply(Patients patients, PatientUpdateRequest patientUpdateRequest){
+
+        patients.setFirstname(patientUpdateRequest.getFirstname());
+        patients.setLastname(patientUpdateRequest.getLastname());
+        patients.setDateOfBirth(patientUpdateRequest.getDateOfBirth());
+        patients.setGender(patientUpdateRequest.getGender());
+        patients.setPhone(patientUpdateRequest.getPhone());
+        patients.setEmail(patientUpdateRequest.getEmail());
+        patients.setAddress(patientUpdateRequest.getAddress());
+
+
     }
     
 }

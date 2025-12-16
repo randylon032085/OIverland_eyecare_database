@@ -1,7 +1,7 @@
 package com.dylan.view.utilmapper;
 
 import com.dylan.view.dto.eye_exam.request.EyeExamCreateRequest;
-import com.dylan.view.dto.eye_exam.request.response.EyeExamResponse;
+import com.dylan.view.dto.eye_exam.response.EyeExamResponse;
 import com.dylan.view.model.EyeExam;
 
 public class EyeExamMapper {

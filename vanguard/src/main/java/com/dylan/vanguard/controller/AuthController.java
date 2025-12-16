@@ -1,6 +1,7 @@
 package com.dylan.vanguard.controller;
 
 // import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,10 +21,10 @@ public class AuthController {
         return "Authentication successful"+request.getSession().getId();
     }
 
-    // @GetMapping("/csrf-token")
-    // public CsrfToken getCsrf(HttpServletRequest request){
-    //     return (CsrfToken) request.getAttribute(CsrfToken.class.getName());
-    // }
+    @GetMapping("/csrf-token")
+    public CsrfToken getCsrf(HttpServletRequest request){
+        return (CsrfToken) request.getAttribute(CsrfToken.class.getName());
+    }
 
     @PostMapping("/add")
     public String createUser(@RequestBody User user){
